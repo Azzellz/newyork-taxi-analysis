@@ -4,8 +4,6 @@ venv
 *.pyc
 *.pyo
 *.pyd
-data.parquet
-*.parquet
 *.csv
 *.xlsx
 *.DS_Store
