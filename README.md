@@ -88,12 +88,14 @@
     ```
 
 4. 下载数据文件
-   执行以下命令自动下载数据（数据来源于NYC Taxi & Limousine Commission Trip Record Data）：
+   执行以下命令自动下载数据（数据来源于 NYC Taxi & Limousine Commission Trip Record Data）：
     ```bash
     python data_fetch.py
     ```
 
 ### 运行应用
+
+tip: 本项目使用 Folium 库（基于 OpenStreetMap）进行地图可视化，需要**科学上网**才能正常显示地图。
 
 ```bash
 # 启动Streamlit应用
