@@ -8,3 +8,6 @@ data.parquet
 *.parquet
 *.csv
 *.xlsx
+*.DS_Store
+*.ipynb_checkpoints
+*.pkl
