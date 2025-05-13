@@ -70,8 +70,8 @@ with col1:
 with col2:
     st.metric("平均行程时长", f"{data_processor.get_avg_trip_duration(filtered_data):.1f} 分钟")
 with col3:
-    avg_distance = data_processor.get_avg_trip_distance(filtered_data)
-    st.metric("平均行程距离", f"{avg_distance:.2f} 英里" if avg_distance > 0 else "数据不可用")
+    avg_miles = data_processor.get_avg_trip_miles(filtered_data)
+    st.metric("平均行程距离", f"{avg_miles:.2f} 英里" if avg_miles > 0 else "数据不可用")
 with col4:
     avg_fare = data_processor.get_avg_fare(filtered_data)
     st.metric("平均费用", f"${avg_fare:.2f}" if avg_fare > 0 else "数据不可用")

@@ -92,8 +92,8 @@ class DataProcessor:
     def clean_data(self):
         """清洗数据，移除异常值"""
         # 移除行程距离异常值
-        if 'trip_distance' in self.data.columns:
-            self.data = self.data[(self.data['trip_distance'] >= 0) & (self.data['trip_distance'] < 100)]
+        if 'trip_miles' in self.data.columns:
+            self.data = self.data[(self.data['trip_miles'] >= 0) & (self.data['trip_miles'] < 100)]
         
         # 移除行程时长异常值
         if 'trip_duration' in self.data.columns:
@@ -201,18 +201,16 @@ class DataProcessor:
             return data['trip_duration'].mean()
         return 0
     
-    def get_avg_trip_distance(self, data):
+    def get_avg_trip_miles(self, data):
         """获取平均行程距离（英里）"""
-        if 'trip_distance' in data.columns:
-            return data['trip_distance'].mean()
+        if 'trip_miles' in data.columns:
+            return data['trip_miles'].mean()
         return 0
     
     def get_avg_fare(self, data):
         """获取平均费用"""
-        fare_cols = ['fare_amount', 'total_amount', 'total_fare']
-        for col in fare_cols:
-            if col in data.columns:
-                return data[col].mean()
+        if 'driver_pay' in data.columns:
+            return data["driver_pay"].mean()
         return 0
     
     def get_heatmap_data(self, data, hour=None):
