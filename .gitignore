@@ -1,0 +1,10 @@
+__pycache__
+myenv
+venv
+*.pyc
+*.pyo
+*.pyd
+data.parquet
+*.parquet
+*.csv
+*.xlsx
