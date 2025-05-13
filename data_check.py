@@ -22,6 +22,6 @@ def read_and_display_parquet(file_path):
 
 if __name__ == "__main__":
     # parquet 文件路径
-    file_path = "data.parquet"
+    file_path = "reduced_data.parquet"
     # 读取并展示信息
     read_and_display_parquet(file_path)

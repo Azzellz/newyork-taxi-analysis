@@ -1,18 +1,15 @@
 import pandas as pd
 import numpy as np
 import datetime
-import os
 from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
 import matplotlib.colors as mcolors
 import random
-from data_fetch import download_file
 
 class DataProcessor:
     def __init__(self):
         # 数据文件路径
-        self.data_file = 'data.parquet'
-        self.data_url = "https://d37ci6vzurychx.cloudfront.net/trip-data/fhvhv_tripdata_2024-01.parquet"
+        self.data_file = 'reduced_data.parquet'
         # 加载数据
         self.load_data()
         # 初始化区域地理信息
@@ -20,13 +17,7 @@ class DataProcessor:
         
     def load_data(self):
         """加载并预处理数据"""
-        # 检查数据文件是否存在
-        if not os.path.exists(self.data_file):
-            print("数据文件不存在，正在下载...")
-            # 下载数据
-            download_file(self.data_url,self.data_file)
-            print("数据文件下载完成。")
-            
+
         # 读取parquet文件
         self.data = pd.read_parquet(self.data_file)
         
