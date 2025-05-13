@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import datetime
 import os
-import json
 from sklearn.cluster import DBSCAN
 from sklearn.preprocessing import StandardScaler
 import matplotlib.colors as mcolors
